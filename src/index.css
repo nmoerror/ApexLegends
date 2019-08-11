@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'apex';
+  src: url('./assets/fonts/blocktastic.otf');
+}
+@font-face {
+  font-family: 'apex-tilt';
+  src: url('./assets/fonts/blocktastic-itl.otf');
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,10 +17,13 @@ body {
   background-image: url('./wall.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  font-family: 'apex';
+  letter-spacing: 2px;
 }
 
 input,
 select {
+  font-family: 'apex';
   box-sizing: border-box;
   margin: 0.5rem 0;
   display: block;
@@ -38,6 +50,7 @@ h5 {
 }
 
 button {
+  font-family: 'apex';
   width: 100%;
   margin: 2rem 0 0 0;
   padding: 0.4rem;
@@ -98,5 +111,132 @@ button:active {
     width: 58px;
     height: 58px;
     opacity: 0;
+  }
+}
+
+/* SHADOW */
+.gamer-tag {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.gamer-tag img {
+  height: 3rem;
+  display: inline-block;
+}
+
+.fact {
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+}
+
+.fact p {
+  margin: 1rem 0 0 0;
+}
+
+.big-img {
+  width: 18rem;
+  margin-left: -3rem;
+  margin-top: 0.5rem;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 2rem;
+}
+
+h4 {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: auto auto auto 1rem;
+}
+h5 {
+  font-size: 0.8rem;
+}
+span {
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+  font-family: 'apex';
+}
+p {
+  font-size: 1.1rem;
+  font-family: 'apex-tilt';
+}
+
+/* GLITCH */
+.glitch {
+  transform: translate(0%, 0%);
+  color: red;
+}
+.glitch:before,
+.glitch:after {
+  display: block;
+  content: attr(data-glitch);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.glitch:after {
+  color: red;
+  z-index: -1;
+}
+.glitch:before {
+  color: #0ff;
+  z-index: -1;
+}
+
+.glitch:before {
+  animation: glitch 6s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+.glitch:after {
+  animation: glitch 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse infinite;
+}
+
+@media only screen and (max-width: 400px) {
+  .glitch {
+    font-size: 3em;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  87.5% {
+    transform: translate(0);
+  }
+  88% {
+    transform: translate(-2px, 2px) scale(1.1);
+  }
+  88.5% {
+    transform: translate(-2px, -2px) scale(0.9);
+  }
+  89% {
+    transform: translate(2px, 2px) scale(1.1);
+  }
+  89.5% {
+    transform: translate(2px, -2px) scale(0.9);
+  }
+  90% {
+    transform: translate(0);
+  }
+  98.5% {
+    transform: translate(0);
+  }
+  99.5% {
+    transform: translate(-2px, -2px);
+  }
+  100% {
+    transform: translate(0);
   }
 }

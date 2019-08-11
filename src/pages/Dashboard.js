@@ -97,7 +97,7 @@ const Dashboard = () => {
                   onChange={e => setPlatform(e.target.value)}
                 >
                   <option value='psn'>PlayStation</option>
-                  <option value='xBox'>xBox</option>
+                  <option value='xbl'>xBox</option>
                   <option value='Origin'>Origin</option>
                 </select>
               </div>
